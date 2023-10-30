@@ -449,7 +449,7 @@ technical knowledge to recover.  You have been warned."
 	[[ "$REPLY" = "Y" || "$REPLY" = "y" ]] || return
 
 	# check if EOL
-	if [ "$isEOL" = true ]; then
+	if [ "$isntEOL" = true ]; then
 		echo_yellow "\nVERY IMPORTANT:
 Your device has reached end of life (EOL) and is no longer supported by Google.
 Returning the to stock firmware **IS NOT RECOMMENDED**.
@@ -1053,7 +1053,7 @@ function stock_menu() {
 	show_header
 
 	if [[ "$unlockMenu" = true || ( "$isFullRom" = false && "$isBootStub" = false && "$isUnsupported" = false \
-			&& "$isCmlBook" = false && "$isEOL" = false ) ]]; then
+			&& "$isCmlBook" = false && "$isntEOL" = false ) ]]; then
 		echo -e "${MENU}**${WP_TEXT}     ${NUMBER} 1)${MENU} Install/Update RW_LEGACY Firmware ${NORMAL}"
 	else
 		echo -e "${GRAY_TEXT}**     ${GRAY_TEXT} 1)${GRAY_TEXT} Install/Update RW_LEGACY Firmware ${NORMAL}"
@@ -1092,11 +1092,11 @@ function stock_menu() {
 	read -re opt
 	case $opt in
 
-		1)  if [[ "$unlockMenu" = true || "$isEOL" = false && ("$isChromeOS" = true && "$isCmlBook" = false \
+		1)  if [[ "$unlockMenu" = true || "$isntEOL" = false && ("$isChromeOS" = true && "$isCmlBook" = false \
 					|| "$isFullRom" = false && "$isBootStub" = false && "$isUnsupported" = false) ]]; then
 				flash_rwlegacy
-			elif [[ "$isEOL" = "true" ]]; then
-				echo_red "The RW_LEGACY firmware update is not supported for devices which have reached end-of-life"
+			elif [[ "$isntEOL" = "true" ]]; then
+				echo_red "This text should not be shown. Please report this to OtterCodes102."
 				read -rep "Press enter to return to the main menu"
 			fi 
 			menu_fwupdate
