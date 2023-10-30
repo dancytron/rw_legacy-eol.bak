@@ -7,7 +7,8 @@
 usb_devs=""
 num_usb_devs=0
 usb_device=""
-isChromeOS=true
+isChromeOS=
+isntEOL=false
 isChromiumOS=false
 isCloudready=false
 flashromcmd=""
