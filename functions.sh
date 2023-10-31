@@ -410,9 +410,9 @@ if [[ "$isChromeOS" = true || "$isChromiumOS" = true ]]; then
 	gbbutilitycmd=$(which gbb_utility)
 else
 	#set cmds
-	flashromcmd=/tmp/flashrom
-	cbfstoolcmd=/tmp/cbfstool
-	gbbutilitycmd=/tmp/gbb_utility
+	flashromcmd=/usr/sbin/flashrom
+	cbfstoolcmd=/bin/cbfstool
+	gbbutilitycmd=/bin/gbb_utility
 fi
 
 #start with a known good state
