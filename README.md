@@ -5,6 +5,6 @@ If you encounter any issues with running RW_LEGACY on your chromebook, you will 
 
 Run
 ```bash
-cd; curl -LO https://raw.githubusercontent.com/OtterCodes102/rw_legacy-eol/master/firmware-util.sh && sudo bash firmware-util.sh
+cd; curl -LO https://raw.githubusercontent.com/OtterCodes101/rw_legacy-eol/master/firmware-util.sh && sudo bash firmware-util.sh
 ```
 to use the script.
